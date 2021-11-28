@@ -55,4 +55,32 @@ class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
+    @Test
+    void countCities(){//mumu
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.city_count());
+
+        City city = new City("pppp", "tttt");
+        cityList.add(city);
+
+        assertEquals(2, cityList.city_count());
+//        assertTrue(cityList.getCities().contains(city));
+    }
+
+    @Test
+    void delete_city(){//mumu
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.city_count());
+
+        City city = new City("pppp", "tttt");
+        cityList.add(city);
+        assertEquals(2, cityList.city_count());
+        cityList.delete(city);
+//        assertEquals(2, cityList.city_count());
+        assertTrue(!cityList.getCities().contains(city));
+    }
+
+
 }

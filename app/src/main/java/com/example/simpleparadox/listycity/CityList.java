@@ -32,5 +32,30 @@ public class CityList {
         Collections.sort(list);
         return list;
     }
+    /**
+     * ********************************* below code written by meMumu***********************
+     */
+
+    /**
+     * Return the size of city list
+     * @ return
+     * size of city list
+     */
+    public int city_count(){//mumu
+        return cities.size();
+    }
+    /**
+     * Delete a specified city object from the list
+     * @ param
+     * get a city object -if exists delete it - if not throw exception
+     *
+     */
+
+    public void delete(City city){//mumu
+        if (!cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+        cities.remove(city);
+    }
 
 }
