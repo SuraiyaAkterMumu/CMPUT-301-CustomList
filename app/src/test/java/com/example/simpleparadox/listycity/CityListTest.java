@@ -67,17 +67,7 @@ class CityListTest {
         assertEquals(2, cityList.city_count());
 //        assertTrue(cityList.getCities().contains(city));
     }
-    @Test
-    void testDeleteException() {
-        CityList cityList = mockCityList();
 
-        City city = new City("Yellowknife", "Northwest Territories");
-        cityList.add(city);
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            cityList.delete(city);
-        });
-    }
 
     @Test
     void delete_city(){//mumu
@@ -91,6 +81,18 @@ class CityListTest {
         cityList.delete(city);
 //        assertEquals(2, cityList.city_count());
         assertTrue(!cityList.getCities().contains(city));
+    }
+    @Test
+    void testDeleteException() {
+        CityList cityList = mockCityList();
+
+        City city = new City("Yellowknife", "Northwest Territories");
+        cityList.add(city);
+        cityList.delete(city);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city);
+        });
     }
 
 
