@@ -87,8 +87,6 @@ class CityListTest {
         CityList cityList = mockCityList();
 
         City city = new City("Yellowknife", "Northwest Territories");
-        cityList.add(city);
-        cityList.delete(city);
 
         assertThrows(IllegalArgumentException.class, () -> {
             cityList.delete(city);
